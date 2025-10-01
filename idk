@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu regalo especial 🌼</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff8dc;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .sobre {
+      width: 200px;
+      height: 150px;
+      background: #f4a261;
+      position: relative;
+      margin: auto;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      border-radius: 6px;
+    }
+
+    .sobre:hover {
+      transform: scale(1.05);
+    }
+
+    .tapa {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 75px solid #e76f51;
+    }
+
+    .flor {
+      font-size: 100px;
+      display: none;
+      animation: aparecer 1.2s ease forwards;
+    }
+
+    @keyframes aparecer {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .mensaje {
+      display: none;
+      font-size: 20px;
+      margin-top: 15px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sobre" onclick="abrir()">
+      <div class="tapa"></div>
+    </div>
+    <div id="flor" class="flor">🌼</div>
+    <div id="mensaje" class="mensaje">Para vos, con mucho cariño 💛</div>
+  </div>
+
+  <script>
+    function abrir() {
+      document.querySelector(".sobre").style.display = "none";
+      document.getElementById("flor").style.display = "block";
+      document.getElementById("mensaje").style.display = "block";
+    }
+  </script>
+</body>
+</html>
